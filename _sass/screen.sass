@@ -1,0 +1,232 @@
+@import 'bourbon/bourbon'
+@import 'neat/neat'
+@import 'base/base'
+@import normalize
+@import vars
+
+body
+	line-height: 1.5em
+	overflow-x: hidden
+
+header, .billboard, .features, .cta, .container, footer
+	+outer-container
+	position: relative
+
+header
+	z-index: 10
+	nav
+		+position(absolute, 25px 0 0 auto)
+		+media (max-width 580px)
+			+position(absolute, 10px 0 auto auto)
+
+header nav a, header .logo
+	display: none
+	+media (max-width 580px)
+		display: inline-block
+		
+header .logo
+	width: 90px
+	+position(absolute, 10px 0 auto 10px)
+
+header nav a		
+	font-size: 12px
+	margin: 0.35em
+
+section
+	margin: $emx2 auto
+
+footer
+	margin: $emx3 auto $emx4
+	nav a 
+		display: inline-block
+		font-size: 18px
+		margin: 0 1.5em
+		text-decoration: none
+		padding: .2em
+		+media (max-width 768px)
+			padding: 18px 0
+	.footer-logo
+		margin: 3em auto 2em
+		display: inline-block
+		img
+			width: 160px
+	p
+		margin-top: 0
+
+.latest, .features h2, .feature p, .cta, footer, .billboard-text
+	text-align: center
+
+.latest
+	margin-bottom: $emx3
+	+media (max-width 580px)
+		display: none
+
+.bond, .billboard-text
+	+span-columns(6)
+	+media (max-width 1023px)
+		+span-columns(12)
+		text-align: center
+
+.bond
+	img
+		max-width: 720px
+		margin-left: -22px
+		+media (max-width 768px)
+			max-width: 100%
+
+.billboard-text
+	margin-top: 60px
+	margin-top: calc(80px - 1.8em)
+	padding-right: 12px
+	+media (max-width 768px)
+		margin-top: $em
+	p
+	+media (max-width 580px)
+		font-size: 12px
+
+.quotes
+	margin-bottom: $emx2
+	padding: $emx4 0 $emx2
+	background: $light-gray
+	.container
+		div
+			padding-left: .7em
+			+span-columns(8)
+			+shift(2)
+			+media (max-width 768px)
+				+span-columns(12)
+				+shift(0)
+
+.quote-photo
+	+span-columns(2 of 8)
+	width: 140px
+
+.features
+	padding: .1em 0 $em
+	.feature
+		+span-columns(4)
+		font-size: 18px
+		+media (max-width 768px)
+			+span-columns(12)
+			text-align: center
+		p
+			+media (max-width 768px)
+			font-size: 24px
+
+hr
+	margin: $center
+	width: 96%
+
+.cta
+	padding: $em 0 $emx2
+	.cta-text
+		font-size: 28px
+		line-height: 1.4
+		margin-bottom: 0
+		padding: 0 8em
+		+media (max-width 1023px)
+			padding: 0 5em
+		+media (max-width 768px)
+			padding: 0 2em
+		+media (max-width 580px)
+			font-size: 22px
+
+//type
+
+a
+	color: $blue
+h1
+	color: $green
+	font-size: 36px
+	line-height: 1.6
+	margin: 0.8em 0 0.53em
+	+media (max-width 580px)
+		font-size: 24px
+
+h2 
+	font-size: 28px
+	line-height: 1.4
+	margin: $em 0 $emx2
+	text-align: center
+	+media (max-width 768px)
+		margin: $em $em $emx2
+
+blockquote
+	font-size: 21px
+	font-style: italic
+	line-height: 1.6
+	color: $medium-gray
+	margin: 0 .7em 0 0
+
+	cite
+		font-size: 18px
+		font-style: italic
+		float: right
+		display: inline-block
+		margin-top: $em
+		+clearfix
+
+.txt-18
+	font-size: 18px
+
+//elements
+
+.button
+	background: $blue
+	border-radius: 3px
+	color: white
+	display: inline-block
+	margin-right: 12px
+	position: relative
+	text-decoration: none
+	transition: background-color 0.3s ease-in-out 0s
+
+.button-header
+	border-radius: 4px
+	font-size: 13px
+	text-transform: uppercase
+	padding: 2px 8px
+	+media (max-width 580px)
+		text-transform: lowercase
+		padding: 0 8px
+		margin-right: 6px
+
+.button-billboard
+	font-size: 24px
+	margin: $em 0
+	padding: 16px 48px
+
+.button-cta
+	font-size: 21px
+	margin: $em 0
+	padding: 12px 24px
+
+.button:hover
+	background: $dark-blue
+	color: white
+
+.logo-billboard
+	margin: $em 30%
+	width: 200px
+	+clearfix
+	+media (max-width 580px)
+		display: none
+
+//quotes
+
+blockquote::before 
+	color: #d3d2ca
+	content: '\201C'
+	float: left
+	font-size: 48px
+	height: 180px
+	margin-top: -14px
+	padding-right: 10px
+
+blockquote::after 
+	color: #d3d2ca
+	content: '\201D'
+	font-size: 48px
+	line-height: 0.25
+	position: relative
+	top: 12px
